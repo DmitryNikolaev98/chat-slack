@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "chat Slack",
+  "main": "./frontend/src/index.js",
+  "scripts": {
+    "build": "npm run build --prefix frontend",
+    "start": "start-server -s ./frontend/build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd frontend && npm ci"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryNikolaev98/chat-slack.git"
+  },
+  "keywords": [],
+  "author": "Dmitry Nikolaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryNikolaev98/chat-slack/issues"
+  },
+  "homepage": "https://github.com/DmitryNikolaev98/chat-slack#readme",
+  "dependencies": {
+    "@hexlet/chat-server": "^1.1.6"
+  }
+}
