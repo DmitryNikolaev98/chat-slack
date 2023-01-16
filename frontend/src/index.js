@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App.jsx';
-import 'react-bootstrap';
+import { Provider } from 'react-redux';
+import store from './slices/index.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './index.css';
+import App from './App.jsx';
 
-const root = ReactDOM.createRoot(document.getElementById('chat'));
-root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+);

@@ -3,28 +3,25 @@ import { useFormik } from 'formik';
 import { useRef, useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { Button, Form } from 'react-bootstrap';
-import useAuth from '../hooks/index.js';
+import useAuth from '../hooks/index.jsx';
 import validator from '../utilites/validator.js';
 import routes from '../utilites/routes.js';
-import loginImage from '../assets/loginImage.jpg';
-
+import loginImage from '../assets/login.jpeg';
 const Login = () => {
   const [authFailed, setAuthFailed] = useState(false);
   const auth = useAuth();
   const inputRef = useRef();
   const location = useLocation();
   const navigate = useNavigate();
-
   useEffect(() => {
     inputRef.current.focus();
   }, []);
-
   const onSubmit = async (values) => {
     setAuthFailed(false);
     try {
       const res = await axios.post(routes.loginPath(), values);
       localStorage.setItem('token', JSON.stringify(res.data));
-      console.log(localStorage);
+      // console.log(localStorage);
       auth.logIn();
       const { from } = location.state || { from: { pathname: '/' } };
       navigate(from);
@@ -37,7 +34,6 @@ const Login = () => {
       throw err;
     }
   };
-
   const {
     values, handleChange, handleSubmit,
   } = useFormik({
@@ -48,7 +44,6 @@ const Login = () => {
     validationSchema: validator,
     onSubmit,
   });
-
   return (
     <div className="container-fluid h-100">
       <div className="row justify-content-center align-content-center h-100">
@@ -73,7 +68,7 @@ const Login = () => {
                     isInvalid={authFailed}
                     ref={inputRef}
                   />
-                  <Form.Label htmlFor="username">Ваш ник</Form.Label>
+                  <Form.Label htmlFor="username">Email</Form.Label>
                 </Form.Group>
                 <Form.Group className="form-floating mb-4">
                   <Form.Control
@@ -89,7 +84,7 @@ const Login = () => {
                     isInvalid={authFailed}
                     ref={inputRef}
                   />
-                  <Form.Label htmlFor="password">Пароль</Form.Label>
+                  <Form.Label htmlFor="password">Password</Form.Label>
                   {authFailed && <div className="invalid-tooltip">Неверные имя пользователя или пароль</div>}
                 </Form.Group>
                 <Button type="submit" className="w-100 mb-3 btn btn-outline-primary">Войти</Button>
@@ -107,3 +102,5 @@ const Login = () => {
     </div>
   );
 };
+
+export default Login;
