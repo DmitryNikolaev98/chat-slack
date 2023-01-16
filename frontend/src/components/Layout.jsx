@@ -12,7 +12,7 @@ const Layout = () => {
           <div className="d-flex flex-column h-100">
             <nav className="shadow-sm navbar navbar-expand-lg navbar-light bg-white">
               <div className="container">
-                <a className="navbar-brand" href="/">Hexlet Chat</a>
+                <a className="navbar-brand" href="/">Slack</a>
                 {loggedIn && <Button onClick={() => logOut()} type="submit" className="btn btn-primary">Выйти</Button>}
               </div>
             </nav>

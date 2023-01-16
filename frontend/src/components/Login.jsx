@@ -7,6 +7,7 @@ import useAuth from '../hooks/index.jsx';
 import validator from '../utilites/validator.js';
 import routes from '../utilites/routes.js';
 import loginImage from '../assets/login.jpeg';
+
 const Login = () => {
   const [authFailed, setAuthFailed] = useState(false);
   const auth = useAuth();
@@ -34,6 +35,7 @@ const Login = () => {
       throw err;
     }
   };
+
   const {
     values, handleChange, handleSubmit,
   } = useFormik({
@@ -44,6 +46,7 @@ const Login = () => {
     validationSchema: validator,
     onSubmit,
   });
+
   return (
     <div className="container-fluid h-100">
       <div className="row justify-content-center align-content-center h-100">
@@ -68,7 +71,7 @@ const Login = () => {
                     isInvalid={authFailed}
                     ref={inputRef}
                   />
-                  <Form.Label htmlFor="username">Email</Form.Label>
+                  <Form.Label htmlFor="username">Пользователь</Form.Label>
                 </Form.Group>
                 <Form.Group className="form-floating mb-4">
                   <Form.Control
@@ -84,7 +87,7 @@ const Login = () => {
                     isInvalid={authFailed}
                     ref={inputRef}
                   />
-                  <Form.Label htmlFor="password">Password</Form.Label>
+                  <Form.Label htmlFor="password">Пароль</Form.Label>
                   {authFailed && <div className="invalid-tooltip">Неверные имя пользователя или пароль</div>}
                 </Form.Group>
                 <Button type="submit" className="w-100 mb-3 btn btn-outline-primary">Войти</Button>
