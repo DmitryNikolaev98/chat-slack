@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "chat Slack",
-  "main": "./frontend/src/index.js",
+  "main": "index.js",
   "scripts": {
     "build": "npm run build --prefix frontend",
     "start": "npx start-server -s ./frontend/build",
@@ -13,7 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/DmitryNikolaev98/chat-slack.git"
   },
-  "keywords": [],
   "author": "Dmitry Nikolaev",
   "license": "ISC",
   "bugs": {
@@ -21,15 +20,9 @@
   },
   "homepage": "https://github.com/DmitryNikolaev98/chat-slack#readme",
   "dependencies": {
-    "@hexlet/chat-server": "^1.1.6",
-    "eslint": "^8.31.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-plugin-import": "^2.27.4",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-react": "^7.32.0",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "@hexlet/chat-server": "^1.1.6"
   },
   "devDependencies": {
-    "eslint-plugin-functional": "^4.4.1"
+    "eslint": "^8.32.0"
   }
 }
