@@ -5,7 +5,7 @@
   "main": "./frontend/src/index.js",
   "scripts": {
     "build": "npm run build --prefix frontend",
-    "start": "start-server -s ./frontend/build",
+    "start": "npx start-server -s ./frontend/build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "cd frontend && npm ci"
   },
@@ -21,6 +21,15 @@
   },
   "homepage": "https://github.com/DmitryNikolaev98/chat-slack#readme",
   "dependencies": {
-    "@hexlet/chat-server": "^1.1.6"
+    "@hexlet/chat-server": "^1.1.6",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.32.0",
+    "eslint-plugin-react-hooks": "^4.6.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-functional": "^4.4.1"
   }
 }
