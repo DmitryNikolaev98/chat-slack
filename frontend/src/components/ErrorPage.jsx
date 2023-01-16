@@ -1,18 +1,15 @@
-import { useRouteError } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const ErrorPage = () => {
-  const error = useRouteError();
-  console.error(error);
-
-  return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{error.statusText || error.message}</i>
-      </p>
-    </div>
-  );
-};
+const ErrorPage = () => (
+  <div className="text-center">
+    <img alt="Страница не найдена" className="img-fluid h-25" src="https://cdn2.hexlet.io/assets/error-pages/404-4b6ef16aba4c494d8101c104236304e640683fa9abdb3dd7a46cab7ad05d46e9.svg" width={226} height={226} />
+    <h1 className="h4 text-muted">Страница не найдена</h1>
+    <p className="text-muted">
+      Но вы можете перейти
+      {' '}
+      <Link to="/">на главную страницу</Link>
+    </p>
+  </div>
+);
 
 export default ErrorPage;
